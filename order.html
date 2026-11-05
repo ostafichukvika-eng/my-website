@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформлення замовлення</title>
+    <link rel="stylesheet" href="stylef.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+        <a href="#part3">Про власника</a>
+        <a href="#part4">Композиції</a>
+        <a href="#part5">Про розробника</a>
+        <a href="#part1">Склад</a>
+        <a href="#part2">Умови зберігання</a>
+        </nav>
+    </header>
+<section class="main-container">
+        <h1>Зефірна Флористика</h1>
+        <p class="subtitle">Кондитерське мистецтво створення реалістичних квітів та композицій із натурального зефіру.</p>
+
+        <div class="order-card">
+            <h2>Оформлення замовлення</h2>
+
+            <form action="#" method="POST" id="orderform">
+
+                <div class="form-group">
+                    <label class="field-label" for="name">Ваше Ім'я:</label>
+                    <input type="text" id="name" name="name" placeholder="Введіть ім'я" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="field-label" for="phone">Номер телефону:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+38 (0XX) XXX-XX-XX" required
+                        pattern="^\+?[0-9]{10,12}$" oninput="this.value = this.value.replace(/[^0-9+]/g, '');">
+                </div>
+
+                <div class="form-group">
+                    <span class="section-title"> Оберіть композицію:</span>
+                    <select id="composition" name="composition" required>
+                        <option value="" disabled selected>— Натисніть, щоб обрати —</option>
+                        <option value="square-box">Квадратна коробочка</option>
+                        <option value="round-box">Кругла коробочка</option>
+                        <option value="bouquet">Букет</option>
+                        <option value="pascha-decor">Паска та декор</option>
+                        <option value="present">Презентик</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <span class="section-title"> Які квіти хочете додати до композиції? (можна декілька):</span>
+                    <div class="flowers-grid">
+                        <label class="flower-item"><input type="checkbox" name="flowers[]" value="Амариліс"> Амариліс</label>
+                        <label class="flower-item"><input type="checkbox" name="flowers[]" value="Бузок"> Бузок</label>
+                        <label class="flower-item"><input type="checkbox" name="flowers[]" value="Вібурнум"> Вібурнум</label>
+                        <label class="flower-item"><input type="checkbox" name="flowers[]" value="Волошка"> Волошка</label>
+                        <label class="flower-item"><input type="checkbox" name="flowers[]" value="Гвоздика"> Гвоздика</label>
+                        <label class="flower-item"><input type="checkbox" name="flowers[]" value="Гіацинт"> Гіацинт</label>
+                        <label class="flower-item"><input type="checkbox" name="flowers[]" value="Гортензія"> Гортензія</label>
+                        <label class="flower-item"><input type="checkbox" name="flowers[]" value="Еустома"> Еустома</label>
+                        <label class="flower-item"><input type="checkbox" name="flowers[]" value="Жоржина"> Жоржина</label>
+                        <label class="flower-item"><input type="checkbox" name="flowers[]" value="Лілія"> Лілія</label>
+                        <label class="flower-item"><input type="checkbox" name="flowers[]" value="Мак"> Мак</label>
+                        <label class="flower-item"><input type="checkbox" name="flowers[]" value="Нарцис"> Нарцис</label>
+                        <label class="flower-item"><input type="checkbox" name="flowers[]" value="Орхідея"> Орхідея</label>
+                        <label class="flower-item"><input type="checkbox" name="flowers[]" value="Півонія"> Півонія</label>
+                        <label class="flower-item"><input type="checkbox" name="flowers[]" value="Піоновидна троянда"> Піоновидна троянда</label>
+                        <label class="flower-item"><input type="checkbox" name="flowers[]" value="Протея"> Протея</label>
+                        <label class="flower-item"><input type="checkbox" name="flowers[]" value="Ранункулюс"> Ранункулюс</label>
+                        <label class="flower-item"><input type="checkbox" name="flowers[]" value="Соняшник"> Соняшник</label>
+                        <label class="flower-item"><input type="checkbox" name="flowers[]" value="Троянда"> Троянда</label>
+                        <label class="flower-item"><input type="checkbox" name="flowers[]" value="Тюльпан"> Тюльпан</label>
+                        <label class="flower-item"><input type="checkbox" name="flowers[]" value="Хризантема"> Хризантема</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="field-label" for="date">Бажана дата готовності:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="field-label" for="comments">Додаткові побажання (колір, смак):</label>
+                    <textarea id="comments" name="comments" rows="3" placeholder="Опишіть ваші побажання до зефіру..."></textarea>
+                </div>
+
+                <div class="buttons-container">
+                    <button type="submit" class="btn-submit">Надіслати замовлення</button>
+                    <button type="reset" id="btnReset" class="btn-submit">Очистити</button>
+                </div>
+
+            </form>
+
+            <div id="previewBlock" class="preview-container">
+                <h2>Перевірте своє замовлення</h2>
+                <div id="Data" class="details"></div>
+                <div class="buttons-container" style="margin-top: 20px;">
+                    <button type="button" id="btnEdit" class="btn-submit" style="background-color: #aaa;">Змінити</button>
+                    <button type="button" id="btnConfirm" class="btn-submit">Надіслати</button>
+                </div>
+            </div>
+
+            <script>
+                const form = document.getElementById('orderform');
+                const previewBlock = document.getElementById('previewBlock');
+                const Data = document.getElementById('Data');
+                const btnEdit = document.getElementById('btnEdit');
+                const btnConfirm = document.getElementById('btnConfirm');
+                const btnReset = document.getElementById('btnReset');
+                const dateInput = document.getElementById('date');
+
+                // Автоматично обмежуємо вибір дати — не раніше ніж сьогодні
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.setAttribute('min', today);
+
+                form.onsubmit = function (e) {
+                    e.preventDefault();
+
+                    const formData = new FormData(form);
+                    
+                    const flowers = formData.getAll('flowers[]');
+                    const flowersText = flowers.length > 0 ? flowers.join(', ') : 'Не обрано';
+                    
+                    const compSelect = document.getElementById('composition');
+                    const compText = compSelect.options[compSelect.selectedIndex].text;
+
+                    // Форматуємо дату з YYYY-MM-DD у звичний вигляд DD.MM.YYYY для відображення клієнту
+                    const rawDate = formData.get('date');
+                    let formattedDate = rawDate;
+                    if (rawDate) {
+                        const parts = rawDate.split('-');
+                        formattedDate = `${parts[2]}.${parts[1]}.${parts[0]}`;
+                    }
+
+                    Data.innerHTML = `
+                        <p><strong>Ім'я:</strong> ${formData.get('name')}</p>
+                        <p><strong>Телефон:</strong> ${formData.get('phone')}</p>
+                        <p><strong>Тип композиції:</strong> ${compText}</p>
+                        <p><strong>Види квітів:</strong> ${flowersText}</p>
+                        <p><strong>Дата готовності:</strong> ${formattedDate}</p>
+                        <p><strong>Побажання:</strong> ${formData.get('comments') || 'Немає'}</p>
+                    `;
+
+                    previewBlock.style.display = 'block';
+                    previewBlock.scrollIntoView({ behavior: 'smooth' });
+                }
+
+                btnEdit.onclick = function () {
+                    previewBlock.style.display = 'none';
+                    form.scrollIntoView({ behavior: 'smooth' });
+                };
+
+                btnConfirm.onclick = function () {
+                    previewBlock.style.display = 'none';
+                    alert('Дякуємо! Ваше замовлення перевірено та надіслано');
+                    form.reset();
+                };
+
+                btnReset.onclick = function () {
+                    previewBlock.style.display = 'none';
+                };
+            </script>
+        </div>
+    </section>
+</body>
+
+</html>

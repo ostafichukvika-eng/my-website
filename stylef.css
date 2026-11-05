@@ -1,0 +1,251 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #fcf6e8;
+    color: #3d2514;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #fcf6e8;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #FDF5E6;
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.main-container {
+    background-color: #f7edd4;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #3d2514;
+}
+
+.subtitle {
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    font-size: 14px;
+}
+
+.order-card {
+    background-color: #ffffff;
+    border: 2px solid #3d2514;
+    border-radius: 30px;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 40px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.order-card h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.section-title {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 12px;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-bottom: 1px dashed #c7b097;
+    padding-bottom: 5px;
+}
+
+label.field-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #c7b097;
+    border-radius: 15px;
+    background-color: #fffdf9;
+    font-family: inherit;
+    color: #3d2514;
+    box-sizing: border-box;
+    font-size: 14px;
+    outline: none;
+    resize: none;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #3d2514;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #c7b097;
+    border-radius: 15px;
+    background-color: #fffdf9;
+    font-family: inherit;
+    color: #3d2514;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.flowers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+    background-color: #fffdf9;
+    border: 1px solid #c7b097;
+    border-radius: 15px;
+    padding: 15px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.flower-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.flower-item input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #3d2514;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    background-color: #3d2514;
+    color: #fcf6e8;
+    border: none;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #55351f;
+}
+
+#btnEdit {
+    background-color: #c7b097;
+    color: #3d2514;
+}
+
+#btnEdit:hover {
+    background-color: #b59d83;
+}
+
+.flowers-grid::-webkit-scrollbar {
+    width: 6px;
+}
+
+.flowers-grid::-webkit-scrollbar-thumb {
+    background-color: #c7b097;
+    border-radius: 10px;
+}
+
+.preview-container {
+    display: none; 
+    margin-top: 40px;
+    padding: 30px;
+    border: 2px dashed #c7b097; 
+    border-radius: 25px;
+    background-color: #fffdf9;
+}
+
+.preview-container h2 {
+    color: #3d2514;
+    border-bottom: 1px dashed #c7b097;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+.details p {
+    margin-bottom: 12px;
+    font-size: 15px;
+    border-bottom: 1px solid #f2e7d5;
+    padding-bottom: 8px;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.details strong {
+    color: #3d2514;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 600px) {
+    .order-card {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .flowers-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    }
+
+    .preview-container {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .buttons-container {
+        flex-direction: column; 
+        gap: 10px;
+    }
+}
